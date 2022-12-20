@@ -11,12 +11,7 @@ object AvishTasks extends App{
   }
   fibo(5,0,1)
 
-  def fact(n:Int):Int= {
-    if(n <= 1) 1
-    else
-      n * fact(n-1)
-  }
-  println(fact(5))
+
 
   def fact1(n:Int , Acc :Int):Int ={
     if(n <= 1) Acc
