@@ -30,6 +30,7 @@ val aSeq = Seq(2,3,1)
   println(numbers.mkString)
   val numberSeq: Seq[Int] = numbers
   println(numberSeq) // ArraySeq
+  println(numberSeq.sum +" this is result")
 
   // vector
   val vector : Vector[Int] = Vector(1,2,3)

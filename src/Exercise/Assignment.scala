@@ -4,12 +4,13 @@ import scala.io.StdIn.readLine
 import scala.io.Source
 
 object Assignment extends App{
- val bufferSource = io.Source.fromFile("C:\\Users\\s.tiwari\\IdeaProjects\\untitled\\src\\Exercise\\exam_data.txt","UTF-8")
-  for(line <- bufferSource.getLines)
-    {
-      val s = line.split(",").map(_.trim).map(_.toInt)
-      println(passNFail(s(0),s(1),s(2)))
-    }
+// val bufferSource = io.Source.fromFile("C:\\Users\\s.tiwari\\IdeaProjects\\untitled\\src\\Exercise\\exam_data.txt","UTF-8")
+//  for(line <- bufferSource.getLines)
+//    {
+//      val s = line.split(",").map(_.trim).map(_.toInt)
+//      if(s != "")
+//        println(passNFail(s(0),s(1),s(2)))
+//    }
   def passNFail(k: Int,l: Int ,M : Int):Boolean =
       if(k * l <= M) true
       else
@@ -28,6 +29,8 @@ object Assignment extends App{
   println(count)
 
   // 3rd Question
+
+
  def sumOfDigit(n:BigInt,sum:BigInt):BigInt={
    if(n == 0) sum
    else
@@ -45,14 +48,14 @@ object Assignment extends App{
   def ntime(S:String, n : Int): String ={
     def add(acc : String, n:Int):String =
       {
-        if( n == 0)
+        if( n == 1)
           acc
           else
           add(acc+S,n-1)
       }
       add(S,n)
   }
-  val b = BigInt(ntime("9785",4))
+  val b = BigInt(ntime("9785",7))
   println(b)
   println(coredigit(b))
 

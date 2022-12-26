@@ -25,6 +25,6 @@ def main(args:Array[String]):Unit =
 }
 
 
-  // Scala object is SINGLETON INSTANCE\
+  // Scala object is SINGLETON INSTANCE
 
 }

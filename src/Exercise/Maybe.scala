@@ -18,7 +18,8 @@ case class Just[+T](value : T) extends Maybe[T]
 
   def flatMap[B](f: T => Maybe[B]): Maybe[B] = f(value)
 
-  def filter[B](f: T => Boolean): Maybe[T] = if(f(value)) this
+  def filter[B](f: T => Boolean): Maybe[T] =
+    if(f(value)) this
   else
     MaybeNot
 }

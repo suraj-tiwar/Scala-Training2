@@ -22,13 +22,11 @@ object MapFlatmapFilterFor extends App{
   list.foreach(println)
   // for comprehensions
   val forCombinators = for {
-    n <- number if n % 2 == 0
-    c <- chars
-    color <- colors
+    n <- number if n % 2 == 0  // this is iterator
+    c <- chars // c is iterator of list of chars
+    color <- colors // color is iterator of Colors
   } yield n+""+c+"-"+color
   println(forCombinators)
-
-
 
 
 }

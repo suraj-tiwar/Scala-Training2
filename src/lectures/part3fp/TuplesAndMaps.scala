@@ -18,7 +18,6 @@ object TuplesAndMaps extends App{
   println(phoneBook.contains("Jim")) // Boolean
   println(phoneBook("Mary")) // no such element exception
   println(phoneBook("Jim"))
-
   // add  a pair
   val newPair = "Marry" -> 678
   val otherType = 765 -> 654
