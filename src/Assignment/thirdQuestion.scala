@@ -33,8 +33,10 @@ object thirdQuestion extends App{
       val result = first_core * second_core
       if(result >= 0 && result <= 9)
         result
-      else
-        coredigit(result)
+      else {
+//        coredigit(result)
+        result/10 + result%10
+      }
     }
 
 }

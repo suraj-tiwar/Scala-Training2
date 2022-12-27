@@ -12,7 +12,7 @@ object TuplesAndMaps extends App{
 
   // Maps - keys -> values
   val aMap : Map[Int,String] = Map()
-  val phoneBook = Map(("Jim" -> 555), (" Daniel" ->  789),("JIM", 9000)).withDefaultValue(-1) // defaultValue = -1
+  val phoneBook = Map(("Jim" -> 555), (" Daniel" ->  789),("JIM", 9000)) // defaultValue = -1
   // a -> b is sugar for (a,b)
   println(phoneBook)
   println(phoneBook.contains("Jim")) // Boolean
@@ -58,7 +58,7 @@ object TuplesAndMaps extends App{
   def friend(network : Map[String,Set[String]], A : String , B:String): Map[String,Set[String]] = {
       val friendA = network(A) // take current list of friends from A person
       val friendB = network(B) // take current list of frined from B person
-    network + (A -> (friendA + B))+ (B -> (friendB+A))  // updateing the network and adding Person B to networkA and adding Person A to networkB
+    network + (A -> (friendA + B))+ (B -> (friendB+A))  // updating the network and adding Person B to networkA and adding Person A to networkB
   }
   def unfriend(network: Map[String,Set[String]],A : String,B : String):Map[String,Set[String]] = {
     val friendA = network(A)
