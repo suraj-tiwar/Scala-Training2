@@ -25,20 +25,24 @@ object fourthQuestion extends App{
       filter.map(x => x(3).toDouble).sum
     }
 
-  def max1(Gatherer : Seq[String], max: Double,res : String): String = {
+  def max1(Gatherer : Seq[String], max: Double,res : String,month : String): String = {
     if(Gatherer.isEmpty)
       res
     else
       {
-        val curr = sum(data,Gatherer.head,"02")
+        val curr = sum(data,Gatherer.head,month)
         if(curr > max)
-        max1(Gatherer.tail,curr,Gatherer.head)
+        max1(Gatherer.tail,curr,Gatherer.head,month)
         else
-          max1(Gatherer.tail,max,res)
+          max1(Gatherer.tail,max,res,month)
       }
   }
 
-  println(max1(gatherer,0.00,"01"))
+  val Quest1 = for {
+    m <- month
+  }yield max1(gatherer,0.00,"",m)
+
+  println(Quest1)
 
   /*
    Are there employees that are better at gathering some specific fruit?
@@ -57,8 +61,8 @@ object fourthQuestion extends App{
     g_name <- gatherer
     f <- fruits
   } yield  filter_based(data,g_name,f)   // this give's me sum of specific fruits for particular person.
-  println(bestGathereSpecificFruits)
- // bestGathereSpecificFruits.foreach(println)
+  //println(bestGathereSpecificFruits)
+  //bestGathereSpecificFruits.foreach(println)
   def Question1Part2(f : String):Seq[List[String]] = {
     val curr_DB = bestGathereSpecificFruits.filter(x => x(1) == f)
     curr_DB.filter(x => x(2).toDouble == curr_DB.map(x => x(2).toDouble).max)
@@ -67,5 +71,19 @@ object fourthQuestion extends App{
     f <- fruits
   } yield Question1Part2(f)
   res.foreach(println)
+  ///  What is your best-earning fruit (overall and by month)?
+
+  val bufferReader1 = io.Source.fromFile("C:\\Users\\s.tiwari\\IdeaProjects\\untitled\\src\\Assignment\\prices.csv", "UTF-8")
+
+
+  val result1 = for {
+    line <- bufferReader1.getLines()
+  } yield line.split(",").map(_.trim).toList
+
+  val data2 = result1.toList
+
+  val mapBasedDate = data2.groupBy(x => x(1))
+  val indexDate = mapBasedDate.keySet
+
 
 }
