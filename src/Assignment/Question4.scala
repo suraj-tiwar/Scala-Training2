@@ -138,6 +138,4 @@ object Question4 extends App{
   println(" min gatherer based on amount")
   println(ans.minBy(x => x(1).toDouble))
 
-
-
 }
